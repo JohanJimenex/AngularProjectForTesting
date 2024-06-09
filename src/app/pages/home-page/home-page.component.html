@@ -1,0 +1,30 @@
+<div *ngFor="let pokemon of pokemons" class="p-card psychic">
+  <div class="character-area">
+    <img class="character" src="" />
+  </div>
+  <div class="details">
+    <span>Name</span>
+    <h3>{{ pokemon.name }}</h3>
+    <p>
+      {{ pokemon.name }} is a Pokémon created by science. It is a bipedal,
+      humanoid creature with some feline features. It is primarily gray with a
+      long, purple tail.
+      <br />
+      <i class="far fa-eye">{{ pokemon.url }}</i>
+    </p>
+  </div>
+  <ul class="stats">
+    <li>
+      <span>Link</span>
+      <h5></h5>
+    </li>
+    <li>
+      <span>HP</span>
+      <h5>380</h5>
+    </li>
+    <li>
+      <span> Weakness </span>
+      <h5><i class="far fa-ghost"></i></h5>
+    </li>
+  </ul>
+</div>
