@@ -1,4 +1,4 @@
-<div *ngFor="let pokemon of pokemons" class="p-card psychic">
+<div *ngFor="let pokemon of pokemons$ | async" class="p-card psychic">
   <div class="character-area">
     <img class="character" src="" />
   </div>

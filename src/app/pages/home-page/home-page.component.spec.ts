@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { Pokemon, PokemonService } from 'src/app/services/pokemon.service';
 import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
@@ -38,16 +38,17 @@ describe('HomePageComponent', () => {
   });
 
   it('Array of pokemons should have 2 length', () => {
-    
     pokemonServiceSpy.getPokemonList.and.returnValue(
       of([
         { name: 'Pikachu', url: 'https://pokeapi.co/api/v2/pokemon/25/' },
         { name: 'Bulbasaur', url: 'https://pokeapi.co/api/v2/pokemon/1/' },
       ])
     );
-    
-    component.ngOnInit();
 
-    expect(component.pokemons.length).toBe(2);
+    component.ngOnInit();
+    
+    component.pokemons$.subscribe((pokemons: Pokemon[]) => {
+      expect(pokemons.length).toBe(2);
+    });
   });
 });
