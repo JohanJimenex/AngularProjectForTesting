@@ -1,4 +1,7 @@
-<div *ngFor="let pokemon of pokemons$ | async" class="p-card psychic">
+<div
+  *ngFor="let pokemon of pokemonsOverviewList$ | async"
+  class="p-card psychic"
+>
   <div class="character-area">
     <img class="character" src="" />
   </div>
@@ -10,7 +13,7 @@
       humanoid creature with some feline features. It is primarily gray with a
       long, purple tail.
       <br />
-      <i class="far fa-eye">{{ pokemon.url }}</i>
+      <button (click)="getPokemonDetails(pokemon.name)">View details</button>
     </p>
   </div>
   <ul class="stats">

@@ -6,10 +6,9 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { KlkComponent } from './klk/klk.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, KlkComponent],
+  declarations: [AppComponent, HomePageComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],

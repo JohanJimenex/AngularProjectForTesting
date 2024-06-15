@@ -1,6 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pokemon, PokemonService } from 'src/app/services/pokemon.service';
+import {
+  PokemonOverview,
+  PokemonService,
+} from 'src/app/services/pokemon.service';
+import { PokemonDetails } from 'src/core/interfaces/pokemon-details.interface';
 
 @Component({
   selector: 'app-home-page',
@@ -8,27 +12,26 @@ import { Pokemon, PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
-  public pokemons$!: Observable<Pokemon[]>;
-  // public pokemons: Pokemon[] = [];
+  public pokemonsOverviewList$!: Observable<PokemonOverview[]>;
+  public pokemonDetails!: PokemonDetails;
 
   private pokemonService = inject(PokemonService);
 
-  ngOnInit() {
-    // this.pokemonService.getPokemonList().subscribe((pokemonList) => {
-    //   this.pokemons = pokemonList;
-    //   console.log(pokemonList);
-    // });
-    this.pokemons$ = this.pokemonService.getPokemonList();
+  ngOnInit(): void {
+    this.pokemonsOverviewList$ = this.pokemonService.getPokemonOverviewList();
 
     this.printPokemon();
   }
 
-  public printPokemon(){
-    this.pokemons$.subscribe((pokemonList) => {
-      console.log(pokemonList);
+  public getPokemonDetails(pokemonName: string): void {
+    this.pokemonService.getPokemonDetails(pokemonName).subscribe((repsonse) => {
+      this.pokemonDetails = repsonse;
     });
   }
 
-
-
+  public printPokemon(): void {
+    this.pokemonsOverviewList$.subscribe((pokemons: PokemonOverview[]) => {
+      console.log(pokemons);
+    });
+  }
 }
