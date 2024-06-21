@@ -1,0 +1,42 @@
+<p-table
+  [value]="configTasasFormGroups"
+  [tableStyle]="{ 'min-width': '50rem' }"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Fecha inicio</th>
+      <th>Fecha fin</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-configTasa let-i="rowIndex">
+    <tr>
+      <td>{{ configTasa.get("id").value }}</td>
+      <td>
+        <form [formGroup]="configTasasFormGroups[i]">
+          <p-calendar
+            formControlName="fechaInicio"
+            [minDate]="configTasa.get('fechaInicio').value"
+            [showIcon]="true"
+            appendTo="body"
+            dateFormat="dd-MM-yy"
+          ></p-calendar>
+        </form>
+      </td>
+      <td>
+        <form [formGroup]="configTasasFormGroups[i]">
+          <p-calendar
+            formControlName="fechaFin"
+            [minDate]="configTasa.get('fechaInicio').value"
+            [maxDate]="configTasa.get('fechaFin').value"
+            [showIcon]="true"
+            appendTo="body"
+            dateFormat="dd-MM-yy"
+            (onSelect)="addNewFormGroup(configTasa.getRawValue(), i)"
+          ></p-calendar>
+        </form>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

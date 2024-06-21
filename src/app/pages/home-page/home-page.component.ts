@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { PokemonDetails } from 'src/app/core/interfaces/pokemon-details.interface';
 import {
   PokemonOverview,
   PokemonService,
 } from 'src/app/services/pokemon.service';
-import { PokemonDetails } from 'src/core/interfaces/pokemon-details.interface';
 
 @Component({
   selector: 'app-home-page',

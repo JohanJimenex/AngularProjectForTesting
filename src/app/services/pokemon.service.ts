@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { PokemonDetails } from 'src/core/interfaces/pokemon-details.interface';
+import { PokemonDetails } from '../core/interfaces/pokemon-details.interface';
+ 
 
 export interface PokemonOverviewRes {
   results: PokemonOverview[];
