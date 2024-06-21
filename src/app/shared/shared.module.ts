@@ -4,7 +4,7 @@ import { PrimeNgModule } from './prime-ng.module';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, PrimeNgModule],
-  exports: [PrimeNgModule],
+  imports: [CommonModule,],
+  exports: [],
 })
-export class SharedModule {}
+export class SharedModule { }

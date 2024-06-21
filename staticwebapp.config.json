@@ -1,11 +1,10 @@
 {
-  "trailingSlash": "auto",
   "navigationFallback": {
     "rewrite": "/index.html"
   },
   "routes": [
     {
-      "route": "/home*",
+      "route": "/test",
       "allowedRoles": ["authenticated"]
     },
     {
