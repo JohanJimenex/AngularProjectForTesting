@@ -1,17 +1,37 @@
 {
+  "trailingSlash": "auto",
   "navigationFallback": {
     "rewrite": "/index.html"
   },
   "routes": [
     {
-      "route": "/*",
+      "route": "/home*",
       "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/.auth/login/github",
+      "statusCode": 404
+    },
+    {
+      "route": "/logout",
+      "redirect": "/.auth/logout"
     }
   ],
   "responseOverrides": {
     "401": {
       "statusCode": 302,
       "rewrite": "/.auth/login/aad"
+    }
+  },
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/<TENANT_ID>/v2.0",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
     }
   }
 }
