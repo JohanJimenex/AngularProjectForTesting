@@ -1,8 +1,14 @@
 {
-    "routes": [
-        {
-            "route": "/*",
-            "rewrite": ""
-        }
-    ]
+  "routes": [
+    {
+      "route": "/*",
+      "allowedRoles": ["authenticated"]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "rewrite": "/.auth/login/aad"
+    }
+  }
 }
