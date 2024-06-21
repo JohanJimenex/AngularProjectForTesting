@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PokemonDetails } from 'src/app/core/interfaces/pokemon-details.interface';
+import { MicrosfEntraIdService } from 'src/app/services/microsf-entra-id.service';
 import {
   PokemonOverview,
   PokemonService,
@@ -16,6 +17,7 @@ export class HomePageComponent {
   public pokemonDetails!: PokemonDetails;
 
   private pokemonService = inject(PokemonService);
+  private microsoftEntraIdService = inject(MicrosfEntraIdService);
 
   ngOnInit(): void {
     this.pokemonsOverviewList$ = this.pokemonService.getPokemonOverviewList();
@@ -32,6 +34,18 @@ export class HomePageComponent {
   public printPokemon(): void {
     this.pokemonsOverviewList$.subscribe((pokemons: PokemonOverview[]) => {
       console.log(pokemons);
+    });
+  }
+
+
+  public getAuthInf(): void {
+    this.microsoftEntraIdService.getTestMicrosoftActiveD().subscribe({
+      next: (response) => {
+        console.log(response);
+      },
+      error: (error) => {
+        console.error(error);
+      },
     });
   }
 }
