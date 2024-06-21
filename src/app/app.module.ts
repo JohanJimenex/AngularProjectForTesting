@@ -10,9 +10,15 @@ import { ReactiveFormComponent } from './pages/reactive-form/reactive-form.compo
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TestComponent } from './pages/test/test.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, ReactiveFormComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    ReactiveFormComponent,
+    TestComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
