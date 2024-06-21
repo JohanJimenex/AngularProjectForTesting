@@ -4,7 +4,7 @@
   },
   "routes": [
     {
-      "route": "/test",
+      "route": "test",
       "allowedRoles": ["authenticated"]
     }
   ],
