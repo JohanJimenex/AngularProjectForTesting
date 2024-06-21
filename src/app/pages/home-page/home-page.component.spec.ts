@@ -7,7 +7,8 @@ import {
 } from 'src/app/services/pokemon.service';
 import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { PokemonDetails } from 'src/core/interfaces/pokemon-details.interface';
+import { PokemonDetails } from 'src/app/core/interfaces/pokemon-details.interface';
+ 
 
 describe('HomePageComponent', () => {
   let fixture: ComponentFixture<HomePageComponent>;
