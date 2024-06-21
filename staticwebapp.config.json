@@ -7,12 +7,6 @@
     {
       "route": "./test",
       "allowedRoles": ["authenticated"]
-    },{
-      "route": "/test",
-      "allowedRoles": ["authenticated"]
-    },{
-      "route": "test",
-      "allowedRoles": ["authenticated"]
     }
   ],
   "responseOverrides": {
