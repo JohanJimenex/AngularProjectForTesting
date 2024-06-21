@@ -1,11 +1,17 @@
 {
   "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/**.css"]
+    "rewrite": "/index.html"
+  
   },
   "routes": [
     {
-      "route": "/*",
+      "route": "./test",
+      "allowedRoles": ["authenticated"]
+    },{
+      "route": "/test",
+      "allowedRoles": ["authenticated"]
+    },{
+      "route": "test",
       "allowedRoles": ["authenticated"]
     }
   ],
