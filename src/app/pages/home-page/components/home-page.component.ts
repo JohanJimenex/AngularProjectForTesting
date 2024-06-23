@@ -10,7 +10,6 @@ import {
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent {
   public pokemonsOverviewList$!: Observable<PokemonOverview[]>;
@@ -36,7 +35,6 @@ export class HomePageComponent {
       console.log(pokemons);
     });
   }
-
 
   public getAuthInf(): void {
     this.microsoftEntraIdService.getTestMicrosoftActiveD().subscribe({

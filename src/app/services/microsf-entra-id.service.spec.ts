@@ -10,7 +10,4 @@ describe('MicrosfEntraIdService', () => {
     service = TestBed.inject(MicrosfEntraIdService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });

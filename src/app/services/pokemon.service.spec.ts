@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { PokemonOverviewRes, PokemonService } from './pokemon.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
-import { PokemonDetails } from 'src/core/interfaces/pokemon-details.interface';
+import { PokemonDetails } from '../core/interfaces/pokemon-details.interface';
 
 describe('PokemonService', () => {
   let service: PokemonService;
