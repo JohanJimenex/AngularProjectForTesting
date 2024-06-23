@@ -5,7 +5,7 @@ import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [],
-  imports: [],
+  imports: [CalendarModule, TableModule, SidebarModule],
   exports: [CalendarModule, TableModule, SidebarModule],
 })
 export class PrimeNgModule {}
